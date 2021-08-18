@@ -1,0 +1,933 @@
+
+
+html {
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: 'Quicksand', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root{
+  height: 100%;
+  
+}
+/* Layout */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+header {
+  grid-area: header;
+  background-color: #21c292;
+}
+main {
+  grid-area: main;
+  padding: 1rem;
+  background-color: antiquewhite; 
+}
+footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+}
+/* Common */
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #ff8000;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+li {
+  margin-top: 1rem;
+}
+input,
+select,
+textarea,
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #6e995b solid;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  
+}
+button {
+  background-color: #f8f8f8;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
+  border: 0.1rem #6e6161 solid;
+}
+button.primary {
+  background-color: #21c292;
+
+}
+button.block {
+  width: 100%;
+}
+button.small {
+  font-size: 1.2rem;
+}
+/* Header */
+header a {
+  color: #ffffff;
+  padding: 1rem;
+}
+a.brand {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+  
+}
+.badge{
+  background-color: #f02020;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ 
+}
+.row.center {
+  justify-content: center;
+}
+.row.top {
+  align-items: flex-start;
+}
+.row.start {
+  justify-content: flex-start;
+}
+.col-1 {
+  flex: 1 1 25rem;
+}
+.col-2 {
+  flex: 2 1 50rem;
+}
+.col-3 {
+  flex: 32 1 75rem;
+}
+.min-30 {
+  min-width: 30rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+/* Image */
+img {
+  border-radius: 0.5rem;
+}
+img.small{
+  max-width: 7rem;
+  width: 100%;
+}
+img.medium {
+  max-width: 29rem;
+  width: 100%;
+  margin-left: auto;
+  display: block;
+  margin-right: auto;
+}
+img.large {
+  width:100%;
+}
+
+.homepic{
+  width: 100%;
+  height: 60vh;
+}
+/* Card */
+.card  {
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+.card:hover{
+  box-shadow: 0 0 10px #d49535;
+  
+}
+
+.card-body {
+  padding: 1rem;
+}
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2rem;
+}
+/* Rating */
+.rating span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
+.rating span:last-child{
+  color:#404040;
+}
+/* Alert */
+.loading{
+  display: block !important;
+}
+.success{
+  color: #20a020;
+}
+.error{
+  color: #a02020;
+}
+.alert{
+  padding :1rem;
+  border: 0.1rem solid transparent;
+  border: 0.5rem;
+}
+.alert-info{
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger{
+  color: #a02020;
+  background-color: #ffe0e0e0;
+}
+
+.alert-success {
+  color: #20a020;
+  background-color: #eeffe0;
+}
+/* Form */
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label {
+  margin: 1rem 0;
+}
+
+/* Dropdown */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #203040;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+/* test */
+
+
+/* body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+} */
+
+
+/*DEFAULT*/
+.title {
+  font-weight: 900;
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  width: 50%;
+}
+
+a {
+  text-decoration: none;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.logo {
+  width: 150px;
+  height: 60px;
+  color: #fff;
+  position: absolute;
+  left: 6%;
+  top: 30px;
+  font-weight: 900;
+}
+
+.icons {
+  position: absolute;
+  right: 6%;
+  top: 30px;
+}
+
+.icons a {
+  color: #fff;
+  margin: 0 20px;
+}
+
+#mob1,
+#mob2,
+#mob3 {
+  display: none;
+  position: relative;
+}
+
+#desk1,
+#desk2,
+#desk3 {
+  display: inline-block;
+  position: relative;
+}
+
+.cart_item {
+  color: #fff;
+  background: red;
+  border-radius: 50%;
+  padding: 5px;
+  text-align: center;
+  position: absolute;
+  right: -15px;
+  width: 10px;
+  height: 10px;
+  top: -15px;
+  font-size: 11px;
+}
+
+@media (max-width:920px) {
+  table td {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .logo {
+    position: absolute;
+    display: flex;
+    top: 5px;
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    left: 40%;
+  }
+
+  .mob {
+    display: block;
+  }
+
+  .responsive #mob1,
+  .responsive #mob2,
+  .responsive #mob3 {
+    display: inline-block;
+    padding: 8px 14px;
+    width: 100%;
+  }
+
+  #desk1,
+  #desk2,
+  #desk3 {
+    display: none;
+  }
+}
+
+@media (max-width:600px) {
+  .logo {
+    position: absolute;
+    display: flex;
+    top: 10px;
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    left: 30%;
+  }
+}
+
+canvas {
+  
+  background-image: url("https://cdn4.iconfinder.com/data/icons/medical-bold-line-1/48/8-512.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+/*ANIMATE*/
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+
+
+
+.container {
+  /* width: 100%; */
+  background: #f4f1ec;
+  height: 80vh;
+  padding: 20px;
+  position: relative;
+  background-image: url("https://i.ibb.co/VCXPBqF/bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+
+/*NAVIGATION*/
+.topnav {
+  overflow: hidden;
+  width: 40%;
+  margin: auto;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 6px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.5s;
+}
+
+.active {
+  color: #3399ff;
+}
+
+.topnav .icon {
+  display: none;
+  z-index: 1;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: #000;
+  padding: 6px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  transition: 0.5s;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 8px 16px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+  color: #3399ff;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media (max-width:1150px) {
+  .topnav {
+    overflow: hidden;
+    width: 50%;
+  }
+
+  .dropdown-content a:before {
+    content: "\f0da";
+    font-family: "FontAwesome";
+    margin: 0 5px;
+  }
+}
+
+@media (max-width:920px) {
+  .topnav {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .topnav a {
+    color: #fff;
+  }
+
+  .dropdown .dropbtn {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 920px) {
+
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+    outline: none !important;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .topnav.responsive {
+    position: absolute;
+    width: 95%;
+    transition: 0.5s;
+    z-index: 111;
+    box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:nth-child(1) {
+    display: none;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    padding: 6px 10px;
+  }
+
+  .topnav.responsive a:not(:first-child) {
+    background: #222b40;
+  }
+
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+
+  .topnav.responsive .dropdown-content {
+    position: relative;
+    background: #222b40;
+  }
+
+  .topnav.responsive .dropdown .dropbtn {
+    background: #222b40;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width:720px) {
+  .topnav.responsive {
+    position: absolute;
+    width: 90%;
+  }
+}
+
+.container section {
+  color: #fff;
+  padding: 30px;
+}
+
+.container section p {
+  line-height: 1.5em;
+}
+
+.container .cards {
+  position: relative;
+  width: 60%;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.container .cards::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 900;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+.container .card_part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform: translateX(700px);
+  /* background-image: url("https://icon2.cleanpng.com/20180520/wlz/kisspng-bournvita-fizzy-drinks-sports-energy-drinks-tea-5b0173226cb017.1146968915268216664452.jpg"); */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  animation: opaqTransition 28s cubic-bezier(0, 0, 0, 0.97) infinite;
+}
+
+
+.container .card_part.card_part-two {
+  z-index: 6;
+  /* background-image: url("https://icon2.cleanpng.com/20180520/wlz/kisspng-bournvita-fizzy-drinks-sports-energy-drinks-tea-5b0173226cb017.1146968915268216664452.jpg"); */
+  animation-delay: 7s;
+  background-repeat: no-repeat;
+}
+
+.container .card_part.card_part-three {
+  z-index: 5;
+  /* background-image: url("https://e7.pngegg.com/pngimages/414/137/png-clipart-horlicks-fizzy-drinks-bournvita-nutrition-health-health-food-nutrition-thumbnail.png"); */
+  animation-delay: 14s;
+  background-repeat: no-repeat;
+}
+
+.container .card_part.card_part-four {
+  z-index: 4;
+  /* background-image: url("https://e7.pngegg.com/pngimages/414/137/png-clipart-horlicks-fizzy-drinks-bournvita-nutrition-health-health-food-nutrition-thumbnail.png"); */
+  animation-delay: 21s;
+  background-repeat: no-repeat;
+}
+
+
+@keyframes opaqTransition {
+  3% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(0);
+  }
+
+  28% {
+    transform: translateX(-700px);
+  }
+
+  100% {
+    transform: translateX(-700px);
+  }
+}
+
+@media (max-width:480px) {
+  .container section {
+    color: #fff;
+    padding: 5px;
+    
+  }
+
+  .container section p {
+    font-size: 13px;
+  }
+
+  .container .cards {
+    position: relative;
+    width: 30%;
+    height: 20vh;
+    float: right;
+    bottom: 10vh;
+  }
+}
+
+
+/*SEARCH BOX*/
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 111;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 70%;
+  background: white;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #bbb;
+}
+
+
+/* test 2*/
+
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+
+}
+
+.elements {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic {
+  width: 100%;
+  display: carock;
+  border-radius: 50%;
+  
+}
+
+.pic a img {
+  border-radius: 100%;
+  width: 100%;
+}
+
+.element-info,
+.info {
+  text-align: center;
+}
+
+.title {
+  text-align: left;
+  margin: 20px 0px;
+  font-size: 25px;
+}
+
+p.element-info {
+  margin-bottom: 11px;
+}
+
+@media screen and (max-width: 700px) {
+  .wrap {
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: center;
+      align-items: center;
+
+  }
+
+  .elements {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #203040;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Checkout Steps */
+.checkout-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: #f08000;
+  color: #f08000;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #21c292;
+  color: white;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+.table button {
+  margin: 0 0.2rem;
+}
